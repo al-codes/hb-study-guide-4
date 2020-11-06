@@ -34,9 +34,21 @@
 </fieldset>
 
 <script>
+  ///vanilla javascript goes here
   "use strict";
+    const popupButton = document.querySelector('#popup-alert-button');
 
-  // TODO: replace this with your code
+    const showAlert = () => {
+      alert("Hi, I'm a popup window!");
+    }
+    // Brings up popup window when user clicks on button
+    popupButton.addEventListener('click', showAlert);
+
+  // Another way -->
+  // popupButton.addEventListener('click', () => {
+  //   alert('Hi! This is a popup window.');
+  // });
+  
 </script>
 
 
@@ -77,8 +89,43 @@
 
 <script>
   "use strict";
+  const multiButton = document.querySelector('#multiply-btn');
+  
+  multiButton.addEventListener('click', (evt) => {
 
-  // TODO: replace this with your code
+    // Prevent route to /nope
+    evt.preventDefault();
+
+    
+
+  });
+
+  function timesTables() {
+    
+    // multiplier
+    let multiplier = parseInt(document.querySelector('#mults-of').value);
+    // array max
+    let uptoMax = parseInt(document.querySelector('#max').value);
+    
+    let returnArray = [];
+    
+    let nextMult = multiplier;
+      
+    while (nextMult <= uptoMax) {
+
+            console.log('in while function')
+            returnArray.push(nextMult);
+            nextMult += multiplier;
+
+          };  
+
+    // print array to console
+    console.log(returnArray);
+
+    };
+
+
+
 </script>
 
 <div class="hint">
