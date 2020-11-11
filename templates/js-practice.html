@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>Practice JavaScript</title>
   <link rel="stylesheet" href="static/styles.css">
+  <script
+  src="http://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -89,42 +93,30 @@
 
 <script>
   "use strict";
-  const multiButton = document.querySelector('#multiply-btn');
+  const form = document.querySelector('#multiplying-form');
   
-  multiButton.addEventListener('click', (evt) => {
+  form.addEventListener('submit', (evt) => {
 
     // Prevent route to /nope
     evt.preventDefault();
 
-    
+      // multiplier
+      const multsOf = Number(document.querySelector('#mults-of').value);
+      // array max
+      const uptoMax = Number(document.querySelector('#max').value);
+      // array of multiples
+      let multiplesArray = [];
 
-  });
-
-  function timesTables() {
-    
-    // multiplier
-    let multiplier = parseInt(document.querySelector('#mults-of').value);
-    // array max
-    let uptoMax = parseInt(document.querySelector('#max').value);
-    
-    let returnArray = [];
-    
-    let nextMult = multiplier;
-      
-    while (nextMult <= uptoMax) {
-
-            console.log('in while function')
-            returnArray.push(nextMult);
-            nextMult += multiplier;
-
-          };  
-
-    // print array to console
-    console.log(returnArray);
-
+      for (const i of Array(uptoMax)) {
+        console.log(i);
+        const multiple = multsOf * i;
+        console.log(multiple);
+        multiplesArray.push(multiple);
     };
-
-
+      
+      // print array to console
+      console.log(multiplesArray);
+});
 
 </script>
 
@@ -153,10 +145,14 @@
   <input type="button" class="find-me" value="Pop-Up Please!">
 </fieldset>
 
+<!-- JQuery -->
 <script>
   "use strict";
 
-  // TODO: replace this with your code
+ $('.find-me').on('click', () => {
+    alert('Finally figured out . instead of # for JQuery selector!');
+  })
+
 </script>
 
 <div class="hint">
@@ -186,7 +182,19 @@
 <script>
   "use strict";
 
-  // TODO: replace this with your code
+  const agreeForm = $('#agreeable-form');
+  
+  agreeForm.on('submit', (evt) => {
+  
+    evt.preventDefault();
+
+    // Favorite food entered by user
+    const favFood = $('#favorite-food-input').val();
+    
+    // Response to favorite food - html reads input, ` marks are like fstrings to insert variables
+    $('#agreeable-text').html(`I like ${favFood} too.`);
+  });
+
 </script>
 
 <div class="hint">
