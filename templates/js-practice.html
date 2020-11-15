@@ -38,7 +38,7 @@
 </fieldset>
 
 <script>
-  ///vanilla javascript goes here
+  // Vanilla javascript goes here
   "use strict";
     const popupButton = document.querySelector('#popup-alert-button');
 
@@ -53,8 +53,9 @@
   //   alert('Hi! This is a popup window.');
   // });
   
-</script>
 
+</script>
+ <!---------------------- Vanilla JS Problem -------------------------> 
 
 <h3>Practicing Your Times Tables</h3>
 <p>
@@ -107,6 +108,7 @@
       // array of multiples
       let multiplesArray = [];
 
+      // for loop to multiply multiples by i
       for (const i of Array(uptoMax)) {
         console.log(i);
         const multiple = multsOf * i;
@@ -114,7 +116,7 @@
         multiplesArray.push(multiple);
     };
       
-      // print array to console
+      // print multiples array to console
       console.log(multiplesArray);
 });
 
@@ -126,6 +128,7 @@
   </div>
 </div>
 
+<!--------------------- JQuery Problem ----------------------------->
 
 <h2>jQuery</h2>
 <p>You should use jQuery for these parts.</p>
@@ -145,12 +148,11 @@
   <input type="button" class="find-me" value="Pop-Up Please!">
 </fieldset>
 
-<!-- JQuery -->
 <script>
   "use strict";
-
+// Selector in class must use . instead of # to select it
  $('.find-me').on('click', () => {
-    alert('Finally figured out . instead of # for JQuery selector!');
+    alert('Found it! Popup Success!');
   })
 
 </script>
@@ -161,6 +163,7 @@
   </div>
 </div>
 
+<!--------------------------JQuery Problem-------------------------->
 
 <h3>An Agreeable Form</h3>
 <p>
@@ -182,10 +185,9 @@
 <script>
   "use strict";
 
+  // Prevent default link on form
   const agreeForm = $('#agreeable-form');
-  
   agreeForm.on('submit', (evt) => {
-  
     evt.preventDefault();
 
     // Favorite food entered by user
@@ -204,7 +206,7 @@
   </div>
 </div>
 
-
+<!------------------AJAX Problem----------------------->
 
 <h2>AJAX</h2>
 
@@ -233,7 +235,7 @@
 
 <script>
   "use strict";
-
+ // Basic callback function 
   const showPuppies = (response) => {
     // Get the URL for the puppy photo
     const url = response.url;
@@ -243,19 +245,20 @@
     const pupPic = $('#puppies-go-here').append(`<img src="${url}">`);
   }
 
+  // Entering data into the puppy form
   $('#puppy-form').on('submit', (evt) => {
     evt.preventDefault();
-
+    
+    //Number of puppies requested in puppy form in integer form
     const numPuppies = {
       'num-puppies': $('#num-puppies').val()
     };
-
+    // Prints how many puppies requested in console
     console.log($('#num-puppies').val());
 
+    // AJAX request to retrieve correct number of puppies and display photo
     $.get('/api/puppies', numPuppies, showPuppies);
   });
-
-
 </script>
 
 <div class="hint">
@@ -264,7 +267,7 @@
   </div>
 </div>
 
-
+<!----------------   CSS Problem    ---------------------->
 
 <h3>CSS Stuff</h3>
 <p>
